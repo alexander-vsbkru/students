@@ -1,7 +1,6 @@
 package com.example.students.config;
 
 import com.example.students.utils.LoadStudentsBook;
-import com.example.students.utils.StudentsBook;
 import com.example.students.utils.StudentsBookWorker;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.ApplicationEventPublisher;

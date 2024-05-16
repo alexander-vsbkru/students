@@ -2,7 +2,6 @@ package com.example.students.utils;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -15,24 +14,25 @@ public class StudentsBook {
     private final HashMap<Integer, Student> studentsMap;
 
     public int add(Student student) {
-        int id = Collections.max(studentsMap.keySet()) + 1;
+        int id = 0;
+        if (!studentsMap.isEmpty()) id = Collections.max(studentsMap.keySet()) + 1;
         studentsMap.put(id, student);
         return id;
     }
 
-    public int delete(int id) {
+    public void delete(int id) {
         studentsMap.remove(id);
-        return id;
     }
 
-    public void clear() {
+    public void clean() {
         studentsMap.clear();
     }
 
     public String toString() {
-        String response = "Список студентов" + System.lineSeparator();
+        if (studentsMap.isEmpty()) return "Students List is clean!";
+        String response = "Students List" + System.lineSeparator();
         for (int id : studentsMap.keySet()) {
-            response = response.concat(id + ". " + studentsMap.get(id).toString());
+            response = response.concat(id + ". " + studentsMap.get(id).toString() + System.lineSeparator());
         }
         return response;
     }

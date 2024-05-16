@@ -1,4 +1,6 @@
 app:
   load-on-start:
     enabled: true
+  load-from-file: 'students.txt'
+
 

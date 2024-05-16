@@ -8,7 +8,7 @@ import java.text.MessageFormat;
 @Getter
 public class AddStudentEvent extends ApplicationEvent {
     private final int id;
-    private Student student;
+    private final Student student;
 
     public AddStudentEvent(Object source, int id, Student student) {
         super(source);
@@ -17,7 +17,7 @@ public class AddStudentEvent extends ApplicationEvent {
     }
 
     public String getMessage() {
-        return MessageFormat.format("add student: {0} {1}, age: {2} with id {3}",
+        return MessageFormat.format("Add student: {0} {1}, age: {2} with id {3}",
                 student.getFirstName(),
                 student.getLastName(),
                 student.getAge(),

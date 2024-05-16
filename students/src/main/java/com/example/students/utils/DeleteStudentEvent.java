@@ -17,6 +17,6 @@ public class DeleteStudentEvent extends ApplicationEvent {
    }
 
    public String getMessage() {
-      return MessageFormat.format("delete student with id {0}", id);
+      return MessageFormat.format("Student with id {0} deleted", id);
    }
 }
