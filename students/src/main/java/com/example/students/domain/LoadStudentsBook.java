@@ -1,4 +1,4 @@
-package com.example.students.utils;
+package com.example.students.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

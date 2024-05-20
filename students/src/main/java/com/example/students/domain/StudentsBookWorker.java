@@ -1,7 +1,10 @@
-package com.example.students.utils;
+package com.example.students.domain;
 
+import com.example.students.event.AddStudentEvent;
+import com.example.students.event.DeleteStudentEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.event.EventListener;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
@@ -39,4 +42,15 @@ public class StudentsBookWorker {
         studentsBook.clean();
         System.out.println(studentsBook);
     }
+
+    @EventListener
+    public void addStudentEventListener(AddStudentEvent eventHolder) {
+        System.out.println(eventHolder.getMessage());
+    }
+
+    @EventListener
+    public void deleteStudentEventListener(DeleteStudentEvent eventHolder) {
+        System.out.println(eventHolder.getMessage());
+    }
+
 }

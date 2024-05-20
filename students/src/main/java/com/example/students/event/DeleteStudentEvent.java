@@ -1,4 +1,4 @@
-package com.example.students.utils;
+package com.example.students.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

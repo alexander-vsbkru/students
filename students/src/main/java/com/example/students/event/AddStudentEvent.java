@@ -1,5 +1,6 @@
-package com.example.students.utils;
+package com.example.students.event;
 
+import com.example.students.domain.Student;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
